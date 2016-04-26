@@ -13,7 +13,7 @@ use db\MySQLI_DB;
 class Students{
     public function getStudents(){
         $database = new MySQLI_DB();
-        return $database->query("SELECT * FROM  students");
+        return $database->query("SELECT firstName, lastName, beltColor, dob, sex FROM  students WHERE active = 1");
     }
 
     public function addStudents($body){
